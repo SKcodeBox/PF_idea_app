@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pf</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/glassmorphism.css' %}">
+  <style>
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="glassmorphism-card">
+      <h1>ようこそ！</h1>
+        <h2>貴方にネタを提供致します</h2>
+      <form method="post" action="{% url 'main_ideas' %}">
+        {% csrf_token %}
+        <label for="answer1">ご希望のプログラミング言語を教えてください：</label>
+        <input type="text" name="answer1" id="answer1" required><br>
+
+        <label for="answer2">ご希望はフロントエンドとバックエンドどちらですか？：</label>
+        <input type="text" name="answer2" id="answer2" required><br>
+ 
+        <label for="answer3">どの様な方を対象とした物をご希望ですか？：</label>
+        <input type="text" name="answer3" id="answer3" required><br>
+
+        <label for="answer4">簡易的 並 複雑 どのクオリティがご希望ですか？：</label>
+        <input type="text" name="answer4" id="answer4" required><br>
+
+        <label for="answer5">大体でもOKなのでどの様なテーマがご希望ですか？:</label>
+        <input type="text" name="answer5" id="answer5" required><br>
+
+        <label for="answer6">逆に除外したい要素はなんですか？：</label>
+        <input type="text" name="answer6" id="answer6" required><br>
+
+        <input type="submit" value="提案を受け取る">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
