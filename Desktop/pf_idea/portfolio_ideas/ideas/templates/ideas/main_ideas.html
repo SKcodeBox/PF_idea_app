@@ -18,6 +18,8 @@
         <h2>貴方にネタを提供致します</h2>
       <form method="post" action="{% url 'main_ideas' %}">
         {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="提案を受け取る">
         <label for="answer1">ご希望のプログラミング言語を教えてください：</label>
         <input type="text" name="answer1" id="answer1" required><br>
 
