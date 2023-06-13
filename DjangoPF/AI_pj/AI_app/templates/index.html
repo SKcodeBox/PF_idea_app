@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div style="margin-bottom: 80px;"></div>
+    <div class="header d-flex justify-content-center">
+        <nav>
+            <div style="margin-bottom: 10px;"></div>
+        </nav>
+    </div>
+   
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label for="answer1">① ご希望のプログラミング言語を教えてください：</label>
+        <input type="text" name="answer1" id="answer1" required><br><br>
+
+        <label for="answer2">② ご希望はフロントエンドとバックエンドどちらですか？：</label><br>
+        <div class="radio-group">
+            <input type="radio" id="frontend" name="answer2" value="フロントエンド">
+            <label for="frontend">フロントエンド</label>
+            <input type="radio" id="backend" name="answer2" value="バックエンド">
+            <label for="backend">バックエンド</label>
+        </div><br><br>
+
+        <label for="answer3">③ どの様な方を対象とした物をご希望ですか？：</label>
+        <input type="text" name="answer3" id="answer3" required><br><br>
+
+        <label for="answer4">④ 簡易的 並 複雑 どのクオリティがご希望ですか？：</label><br>
+        <div class="radio-group">
+            <input type="radio" id="simple" name="answer4" value="簡易的">
+            <label for="simple">簡易的</label>
+            <input type="radio" id="standard" name="answer4" value="並">
+            <label for="standard">並</label>
+            <input type="radio" id="complex" name="answer4" value="複雑">
+            <label for="complex">複雑</label>
+        </div><br><br>
+
+        <label for="answer5">⑤ 大体でもOKなのでどの様なテーマがご希望ですか？:</label>
+        <input type="text" name="answer5" id="answer5" required><br><br>
+
+        <label for="answer6">逆に除外したい要素はなんですか？：</label>
+        <input type="text" name="answer6" id="answer6" required><br><br>
+
+        <input type="submit" value="提案する">
+    </form>
+
+</body>
+</html>
