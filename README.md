@@ -1,4 +1,4 @@
-tree 
+tree  6/14 
 C:.
 └─AI_pj
     │  db.sqlite3
@@ -46,3 +46,5 @@ C:.
                 urls.cpython-311.pyc
                 wsgi.cpython-311.pyc
                 __init__.cpython-311.pyc
+              
+API有料版を契約予定
