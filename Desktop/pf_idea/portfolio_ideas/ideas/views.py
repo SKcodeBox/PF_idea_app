@@ -1,8 +1,7 @@
 from django.shortcuts import render
 import openai
-from .forms import MainIdeasForm
 
-openai.api_key = "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"  # ご自身のAPIキーを設定してください
+openai.api_key = ""  # ご自身のAPIキーを設定してください
 openai.organization = ""  # ご自身のOrganization IDを設定してください
 
 def def_set(prompt):
@@ -32,17 +31,6 @@ def main_ideas(request):
         return render(request, 'ideas/result.html', {'portfolio_idea': portfolio_idea})
     else:
         return render(request, 'ideas/main_ideas.html')
-    
-    def main_ideas(request):
-        form = MainIdeasForm()
-
-    if request.method == 'POST':
-        form = MainIdeasForm(request.POST)
-        if form.is_valid():
-            # フォームの処理
-
-    context = {'form': form}
-    return render(request, 'main_ideas.html', context)
     
     
     
